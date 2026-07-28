@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="Tomasz Kostek — saunamistrz, wokalista, aktor scen muzycznych i konferansjer. Steam · Voice · Experience.">
+<title>Tomasz Kostek | Steam · Voice · Experience</title>
+<style>
+:root{
+  --bg:#080808; --panel:#11110f; --text:#f4f0e8; --muted:#bdb6aa;
+  --gold:#d0a34a; --gold2:#f0d28f; --line:#2a2926; --red:#7f1d1d;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:min(var(--max),91vw);margin:auto}
+nav{position:fixed;z-index:30;top:0;left:0;right:0;background:rgba(8,8,8,.78);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:.08em;font-size:14px}.logo b{color:var(--gold)}
+.links{display:flex;gap:24px;font-size:14px;color:#ded9d0}
+.hero{min-height:100svh;position:relative;display:grid;align-items:end;background:
+linear-gradient(90deg,rgba(5,5,5,.95) 2%,rgba(5,5,5,.72) 37%,rgba(5,5,5,.18) 68%),
+linear-gradient(0deg,#080808 0%,transparent 42%),
+url("assets/hero.webp") center 22%/cover no-repeat}
+.hero-content{padding:148px 0 92px;max-width:760px}
+.eyebrow{font-size:12px;letter-spacing:.25em;text-transform:uppercase;font-weight:800;color:var(--gold)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
+h1{font-size:clamp(58px,9vw,118px);line-height:.88;letter-spacing:-.055em;margin:18px 0 28px;font-weight:500}
+h1 em{color:var(--gold);font-weight:500}
+.hero p{font-size:clamp(18px,2vw,24px);line-height:1.55;color:#f1ede5;max-width:670px}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.btn{padding:14px 19px;border:1px solid var(--gold);font-weight:700;font-size:14px}
+.btn.primary{background:var(--gold);color:#0b0b0b}
+section{padding:100px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(40px,5vw,70px);line-height:1.02;margin:10px 0 28px;font-weight:500}
+p{font-size:17px;line-height:1.75;color:var(--muted)}
+.intro{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+.intro img{height:620px;width:100%;object-fit:cover;object-position:center 18%}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);margin-top:34px}
+.stat{padding:23px}.stat+.stat{border-left:1px solid var(--line)}
+.stat strong{display:block;color:var(--gold2);font-size:22px}.stat span{font-size:13px;color:#aaa}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.pillar{min-height:360px;padding:34px;border:1px solid var(--line);background:linear-gradient(160deg,#141412,#0d0d0c)}
+.pillar .n{font-size:11px;letter-spacing:.22em;color:var(--gold);font-weight:800}
+.pillar h3{font-size:38px;margin:72px 0 15px;font-weight:500}
+.pillar p{font-size:15.5px}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.feature img{width:100%;height:600px;object-fit:cover}
+.kicker{color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:.22em;font-weight:800}
+.quote{padding:90px 0;text-align:center}.quote blockquote{font-family:Georgia,serif;font-size:clamp(34px,5vw,64px);line-height:1.15;margin:0 auto;max-width:980px;font-weight:400}
+.quote em{color:var(--gold)}
+.roles{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:32px}
+.role{padding:22px;border-top:1px solid var(--line)}.role b{color:#f0e7d7}.role span{color:var(--muted)}
+.services{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:35px}
+.service{padding:30px;background:#10100f;border:1px solid var(--line)}
+.service h3{font-size:29px;margin:10px 0}
+.media{display:grid;gap:12px;margin-top:35px}
+.media a{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.media small{color:var(--gold);white-space:nowrap}
+.gallery{display:grid;grid-template-columns:1.4fr .6fr;gap:12px;margin-top:35px}
+.gallery img{width:100%;height:360px;object-fit:cover}.gallery img:first-child{height:732px;grid-row:span 2}
+.contact{text-align:center}.contact p{max-width:670px;margin:0 auto 28px}
+footer{padding:28px 0 40px;border-top:1px solid var(--line);color:#777;font-size:13px}
+@media(max-width:820px){
+  .links{display:none}
+  .hero{background-position:60% center}
+  .intro,.feature,.pillars,.services,.gallery{grid-template-columns:1fr}
+  .intro img,.feature img{height:480px}
+  .gallery img,.gallery img:first-child{height:410px;grid-row:auto}
+  .stats{grid-template-columns:1fr}.stat+.stat{border-left:0;border-top:1px solid var(--line)}
+  .roles{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav">
+  <div class="logo">TOMASZ <b>KOSTEK</b></div>
+  <div class="links">
+    <a href="#omnie">O mnie</a><a href="#steam">Steam</a><a href="#voice">Voice</a>
+    <a href="#experience">Experience</a><a href="#media">Media</a><a href="#kontakt">Kontakt</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap hero-content">
+    <div class="eyebrow">Tomasz Kostek · Steam · Voice · Experience</div>
+    <h1>Scena ma<br>różne <em>oblicza.</em></h1>
+    <p>Saunamistrz. Wokalista. Aktor scen muzycznych. Konferansjer. Łączę głos, teatr, emocje i kontakt z publicznością — niezależnie od tego, czy sceną jest teatr, gala czy rozgrzana sauna.</p>
+    <div class="btnrow"><a class="btn primary" href="#omnie">Poznaj mnie</a><a class="btn" href="#kontakt">Współpraca</a></div>
+  </div>
+</header>
+
+<section id="omnie"><div class="wrap intro">
+  <div>
+    <div class="kicker">O mnie</div>
+    <h2>Najpierw była scena.</h2>
+    <p>Śpiew i teatr towarzyszą mi od lat. Występuję w spektaklach operetkowych i projektach koncertowych, współpracuję z teatrami muzycznymi i agencjami artystycznymi, a doświadczenie sceniczne przeniosłem również do świata ceremonii saunowych.</p>
+    <p>Dziś buduję własny język łączący muzykę na żywo, aktorstwo, narrację i aufguss. Nie chodzi mi wyłącznie o wykonanie programu. Chodzi o moment, który publiczność zapamięta.</p>
+    <div class="stats">
+      <div class="stat"><strong>Finalista MP</strong><span>Saunamistrzów 2025</span></div>
+      <div class="stat"><strong>Sauna Cup</strong><span>2025</span></div>
+      <div class="stat"><strong>PL · EN</strong><span>scena i prowadzenie</span></div>
+    </div>
+  </div>
+  <img src="assets/portrait.webp" alt="Tomasz Kostek — portret sceniczny">
+</div></section>
+
+<section><div class="wrap">
+  <div class="kicker">Steam · Voice · Experience</div>
+  <h2>Trzy światy. Jedna historia.</h2>
+  <div class="pillars">
+    <div class="pillar"><div class="n">01 / STEAM</div><h3>Aufguss & Show</h3><p>Ceremonie saunowe, autorskie show, praca z muzyką, aromatem, temperaturą i emocją. Sauna jako pełnoprawna scena.</p></div>
+    <div class="pillar"><div class="n">02 / VOICE</div><h3>Głos & Scena</h3><p>Opera, operetka, musical, koncerty i oprawa muzyczna uroczystości. Repertuar dobierany do miejsca, okazji i publiczności.</p></div>
+    <div class="pillar"><div class="n">03 / EXPERIENCE</div><h3>Host & Story</h3><p>Konferansjerka i słowo wiążące. Prowadzenie koncertów, wydarzeń, gali i zawodów — z energią, narracją i kontaktem z ludźmi.</p></div>
+  </div>
+</div></section>
+
+<section id="steam"><div class="wrap feature">
+  <img src="assets/show.webp" alt="Tomasz Kostek podczas widowiska saunowego">
+  <div>
+    <div class="kicker">Steam / Iluzja Życia</div>
+    <h2>Sauna może być teatrem.</h2>
+    <p><strong style="color:#f3ead8">„Iluzja Życia”</strong> to show, od którego zaczęło się świadome łączenie mojego świata scenicznego z aufgussem. Teatr, przerysowanie, muzyka, zapach, ruch i śpiew na żywo spotykają się w kilkunastominutowej historii.</p>
+    <p>To właśnie ten kierunek stał się znakiem rozpoznawczym moich autorskich ceremonii: technika jest ważna, ale najważniejsze jest to, co widz czuje po zakończeniu seansu.</p>
+    <div class="btnrow"><a class="btn" target="_blank" rel="noopener" href="https://zyciebytomskie.pl/pl/757_styl-zycia/27996_jak-zostac-saunamistrzem.html">Przeczytaj o mojej drodze</a></div>
+  </div>
+</div></section>
+
+<section class="quote"><div class="wrap">
+  <blockquote>„Steam i Voice to narzędzia.<br><em>Experience</em> jest tym, co zostaje.”</blockquote>
+</div></section>
+
+<section id="voice"><div class="wrap feature">
+  <div>
+    <div class="kicker">Voice / Scena</div>
+    <h2>Głos poza sauną.</h2>
+    <p>Współpracuję z teatrami muzycznymi i agencjami artystycznymi, występując w spektaklach operetkowych, koncertach i projektach muzycznych.</p>
+    <div class="roles">
+      <div class="role"><b>Wesoła wdówka</b><br><span>Vicomte Cascada</span></div>
+      <div class="role"><b>Zemsta nietoperza</b><br><span>Dr Falke</span></div>
+      <div class="role"><b>Noc w Wenecji</b><br><span>Enrico Piselli</span></div>
+      <div class="role"><b>Księżniczka czardasza</b><br><span>Miksa</span></div>
+    </div>
+    <div class="services">
+      <div class="service"><div class="kicker">Uroczystości</div><h3>Oprawa muzyczna</h3><p>Śluby, jubileusze, uroczystości rodzinne, gale i wydarzenia firmowe. Repertuar od muzyki sakralnej i klasycznej po operetkę, musical i muzykę rozrywkową.</p></div>
+      <div class="service"><div class="kicker">Koncerty</div><h3>Występy wokalne</h3><p>Programy solowe i wspólne projekty sceniczne. Możliwość przygotowania repertuaru dopasowanego do charakteru wydarzenia.</p></div>
+    </div>
+  </div>
+  <img src="assets/robe.webp" alt="Tomasz Kostek podczas wydarzenia">
+</div></section>
+
+<section id="experience"><div class="wrap feature">
+  <img src="assets/host.webp" alt="Tomasz Kostek z mikrofonem">
+  <div>
+    <div class="kicker">Experience / Host</div>
+    <h2>Prowadzę wydarzenie. Nie tylko mikrofon.</h2>
+    <p>Lubię być łącznikiem między sceną a publicznością — opowiadać, budować atmosferę, reagować na to, co dzieje się tu i teraz, i prowadzić widza przez cały wieczór.</p>
+    <p>Prowadzę koncerty, wydarzenia kulturalne i plenerowe, gale oraz międzynarodowe wydarzenia saunowe. W projektach muzycznych tworzę także słowo wiążące i narrację pomiędzy kolejnymi częściami programu.</p>
+  </div>
+</div></section>
+
+<section id="media"><div class="wrap">
+  <div class="kicker">Media & realizacje</div><h2>Nie tylko ja o tym mówię.</h2>
+  <div class="media">
+    <a target="_blank" rel="noopener" href="https://parkwodny.com.pl/nasza-kadra/tomasz-kostek/"><span>Park Wodny Tarnowskie Góry — profil kadry</span><small>Zobacz ↗</small></a>
+    <a target="_blank" rel="noopener" href="https://zyciebytomskie.pl/pl/757_styl-zycia/27996_jak-zostac-saunamistrzem.html"><span>Życie Bytomskie — „Jak zostać saunamistrzem?”</span><small>Czytaj ↗</small></a>
+    <a target="_blank" rel="noopener" href="https://www.bytomski.pl/operetka-przy-krawieckiej-muzyka-wybrzmieje-w-sredniowiecznej-uliczce"><span>Bytomski.pl — działalność koncertowa</span><small>Czytaj ↗</small></a>
+    <a target="_blank" rel="noopener" href="https://fundacja-energetyk.pl/jubileusz-25-lecia-fundacji-energetyk/"><span>Fundacja Energetyk — oprawa artystyczna jubileuszu</span><small>Zobacz ↗</small></a>
+    <a target="_blank" rel="noopener" href="https://tarnowskiegory.pl/2025/09/wiedenskie-debiuty-w-palacu-w-rybnej/"><span>Wiedeńskie Debiuty — prowadzenie koncertu</span><small>Zobacz ↗</small></a>
+    <a target="_blank" rel="noopener" href="https://minerpl.wordpress.com/2025/03/"><span>Minerowie — emocjonalne recenzje seansów</span><small>Czytaj ↗</small></a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="kicker">Moments</div><h2>Ludzie. Scena. Emocje.</h2>
+  <div class="gallery">
+    <img src="assets/steam.webp" alt="Tomasz Kostek podczas ceremonii">
+    <img src="assets/community.webp" alt="ekipa wydarzenia">
+    <img src="assets/robe.webp" alt="Tomasz Kostek po wydarzeniu">
+  </div>
+</div></section>
+
+<section id="kontakt"><div class="wrap contact">
+  <div class="kicker">Współpraca</div>
+  <h2>Stwórzmy coś,<br>co zostaje w pamięci.</h2>
+  <p>Autorskie show, koncert, oprawa muzyczna uroczystości, prowadzenie wydarzenia albo projekt łączący kilka światów? Porozmawiajmy.</p>
+  <div class="btnrow" style="justify-content:center">
+    <a class="btn primary" href="mailto:TU_WPISZ_EMAIL">Napisz do mnie</a>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.instagram.com/kostekaufgussmaster/">Instagram</a>
+    <a class="btn" target="_blank" rel="noopener" href="https://www.facebook.com/tomasz.kostek.7/">Facebook</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">© 2026 Tomasz Kostek · Steam & Voice Experience</div></footer>
+</body></html>
