@@ -28,27 +28,95 @@
 <meta property="og:description" content="Saunamistrz, wokalista, aktor scen muzycznych i konferansjer. Autorskie seanse, śpiew na żywo i emocje tworzone dla publiczności.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tomaszkostek.pl/">
-
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://tomaszkostek.pl/#tomasz-kostek",
-  "name": "Tomasz Kostek",
-  "alternateName": "Kostek",
-  "url": "https://tomaszkostek.pl/",
-  "description": "Tomasz Kostek — saunamistrz, wokalista, aktor scen muzycznych i konferansjer.",
-  "jobTitle": [
-    "Saunamistrz",
-    "Wokalista",
-    "Aktor scen muzycznych",
-    "Konferansjer"
-  ],
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=61579206681798"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://tomaszkostek.pl/#tomasz-kostek",
+      "name": "Tomasz Kostek",
+      "alternateName": "Kostek",
+      "url": "https://tomaszkostek.pl/",
+      "image": "https://tomaszkostek.pl/assets/hero.webp",
+      "email": "mailto:kontakt@tomaszkostek.pl",
+      "description": "Tomasz Kostek – saunamistrz, tenor, wokalista, aktor scen muzycznych i konferansjer. Twórca autorskich widowisk oraz marki Steam & Voice Experience.",
+      "jobTitle": [
+        "Saunamistrz",
+        "Tenor",
+        "Wokalista",
+        "Aktor scen muzycznych",
+        "Konferansjer"
+      ],
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "Polski",
+          "alternateName": "pl"
+        },
+        {
+          "@type": "Language",
+          "name": "Angielski",
+          "alternateName": "en"
+        }
+      ],
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Bytom, Polska",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bytom",
+          "addressCountry": "PL"
+        }
+      },
+      "worksFor": {
+        "@id": "https://tomaszkostek.pl/#organization"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61579206681798",
+        "https://www.instagram.com/kostekaufgussmaster/"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://tomaszkostek.pl/#organization",
+      "name": "Tomasz Kostek – Steam & Voice Experience",
+      "alternateName": "Steam & Voice Experience",
+      "legalName": "Tomasz Kostek – Steam & Voice Experience",
+      "url": "https://tomaszkostek.pl/",
+      "email": "kontakt@tomaszkostek.pl",
+      "taxID": "6263072336",
+      "founder": {
+        "@id": "https://tomaszkostek.pl/#tomasz-kostek"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Polska"
+        },
+        {
+          "@type": "Place",
+          "name": "Europa"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "współpraca i rezerwacje",
+        "email": "kontakt@tomaszkostek.pl",
+        "availableLanguage": [
+          "pl",
+          "en"
+        ]
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61579206681798",
+        "https://www.instagram.com/kostekaufgussmaster/"
+      ]
+    }
   ]
 }
 </script>
+
 <style>
 :root{
   --bg:#080808; --panel:#11110f; --text:#f4f0e8; --muted:#bdb6aa;
@@ -241,10 +309,10 @@ footer{padding:28px 0 40px;border-top:1px solid var(--line);color:#777;font-size
 </div></section>
 
 <footer>
-  <div class="wrap">
-    © 2026 Tomasz Kostek • Steam &amp; Voice Experience
-&nbsp;•&nbsp;
-<a href="privacy.html">Polityka prywatności</a>
-  </div>
+    <div class="wrap">
+        © 2026 Tomasz Kostek • Steam &amp; Voice Experience
+        &nbsp;•&nbsp;
+        <a href="privacy.html">Polityka prywatności</a>
+    </div>
 </footer>
 </body></html>
