@@ -1,96 +1,347 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Polityka prywatności | Tomasz Kostek – Steam & Voice Experience</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <title>Polityka prywatności | Tomasz Kostek – Steam &amp; Voice Experience</title>
+  <meta name="description" content="Polityka prywatności strony tomaszkostek.pl – informacje o administratorze, Google Analytics, plikach cookies i prawach użytkownika.">
+  <link rel="canonical" href="https://tomaszkostek.pl/privacy.html">
+  <link rel="icon" type="image/png" href="/favicon.png">
 
-<meta name="description" content="Polityka prywatności strony tomaszkostek.pl">
-
-<link rel="canonical" href="https://tomaszkostek.pl/privacy.html">
-
-<style>
-body{
-    font-family: Georgia, serif;
-    max-width:900px;
-    margin:60px auto;
-    padding:0 24px;
-    line-height:1.8;
-    color:#222;
-}
-
-h1{
-    font-size:2.3rem;
-    margin-bottom:20px;
-}
-
-h2{
-    margin-top:40px;
-}
-
-a{
-    color:#2d5aa7;
-}
-
-small{
-    color:#777;
-}
-</style>
+  <style>
+    :root{
+      --bg:#080808;
+      --panel:#11110f;
+      --text:#f4f0e8;
+      --muted:#bdb6aa;
+      --gold:#d0a34a;
+      --gold2:#f0d28f;
+      --line:#2a2926;
+      --max:980px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(208,163,74,.10), transparent 33%),
+        radial-gradient(circle at 90% 10%, rgba(127,29,29,.11), transparent 35%),
+        var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      line-height:1.75;
+    }
+    a{color:inherit;text-decoration:none}
+    a:hover{color:var(--gold2)}
+    .wrap{width:min(var(--max),91vw);margin:auto}
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(8,8,8,.86);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .logo{
+      font-weight:800;
+      letter-spacing:.09em;
+      font-size:14px;
+      text-transform:uppercase;
+    }
+    .logo b{color:var(--gold)}
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--muted);
+      font-size:14px;
+      font-weight:650;
+    }
+    .hero{
+      padding:110px 0 64px;
+      border-bottom:1px solid var(--line);
+    }
+    .kicker{
+      margin-bottom:18px;
+      color:var(--gold);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.26em;
+      text-transform:uppercase;
+    }
+    h1{
+      max-width:820px;
+      margin:0;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(48px,8vw,92px);
+      line-height:.98;
+      letter-spacing:-.035em;
+      font-weight:500;
+    }
+    .lead{
+      max-width:720px;
+      margin:28px 0 0;
+      color:var(--muted);
+      font-size:clamp(17px,2.3vw,21px);
+    }
+    main{padding:56px 0 96px}
+    .meta{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:1px;
+      margin-bottom:46px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:var(--line);
+    }
+    .meta div{
+      min-height:115px;
+      padding:22px;
+      background:var(--panel);
+    }
+    .meta small{
+      display:block;
+      margin-bottom:8px;
+      color:var(--gold);
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .meta strong{font-size:15px;line-height:1.45}
+    article{max-width:780px}
+    section{
+      padding:34px 0;
+      border-top:1px solid var(--line);
+    }
+    section:first-child{border-top:0;padding-top:0}
+    h2{
+      margin:0 0 14px;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(28px,4vw,42px);
+      line-height:1.1;
+      font-weight:500;
+    }
+    p{margin:0 0 14px;color:var(--muted)}
+    strong{color:var(--text)}
+    ul{margin:14px 0 0;padding-left:22px;color:var(--muted)}
+    li{margin:8px 0}
+    .mail{
+      color:var(--gold2);
+      border-bottom:1px solid rgba(240,210,143,.42);
+    }
+    .btnrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:36px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:0 22px;
+      border:1px solid var(--gold);
+      font-weight:750;
+      transition:.2s ease;
+    }
+    .btn.primary{background:var(--gold);color:#111}
+    .btn:hover{
+      transform:translateY(-1px);
+      background:var(--gold2);
+      border-color:var(--gold2);
+      color:#111;
+    }
+    footer{
+      border-top:1px solid var(--line);
+      color:#85817a;
+    }
+    .footer{
+      min-height:110px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      font-size:14px;
+    }
+    .footer a{color:var(--muted)}
+    @media(max-width:700px){
+      .nav{min-height:68px}
+      .hero{padding:82px 0 46px}
+      main{padding:40px 0 70px}
+      .meta{grid-template-columns:1fr}
+      .meta div{min-height:auto}
+      .footer{
+        padding:28px 0;
+        align-items:flex-start;
+        flex-direction:column;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="/">Tomasz <b>Kostek</b></a>
+      <a class="back" href="/" aria-label="Powrót do strony głównej">← Strona główna</a>
+    </div>
+  </header>
 
-<h1>Polityka prywatności</h1>
+  <div class="hero">
+    <div class="wrap">
+      <div class="kicker">Steam &amp; Voice Experience</div>
+      <h1>Polityka prywatności</h1>
+      <p class="lead">
+        Jasne zasady dotyczące danych, plików cookies i narzędzi analitycznych
+        wykorzystywanych na stronie tomaszkostek.pl.
+      </p>
+    </div>
+  </div>
 
-<small>Ostatnia aktualizacja: sierpień 2026</small>
+  <main>
+    <div class="wrap">
+      <div class="meta" aria-label="Najważniejsze informacje">
+        <div>
+          <small>Administrator</small>
+          <strong>Tomasz Kostek – Steam &amp; Voice Experience</strong>
+        </div>
+        <div>
+          <small>NIP</small>
+          <strong>6263072336</strong>
+        </div>
+        <div>
+          <small>Kontakt</small>
+          <strong><a class="mail" href="mailto:kontakt@tomaszkostek.pl">kontakt@tomaszkostek.pl</a></strong>
+        </div>
+      </div>
 
-<h2>Administrator strony</h2>
+      <article>
+        <section>
+          <h2>Administrator danych</h2>
+          <p>
+            Administratorem danych związanych z korzystaniem ze strony
+            <strong>tomaszkostek.pl</strong> jest
+            <strong>Tomasz Kostek – Steam &amp; Voice Experience</strong>,
+            NIP <strong>6263072336</strong>, prowadzący działalność gospodarczą w Polsce.
+          </p>
+          <p>
+            W sprawach dotyczących prywatności możesz napisać na adres
+            <a class="mail" href="mailto:kontakt@tomaszkostek.pl">kontakt@tomaszkostek.pl</a>.
+          </p>
+        </section>
 
-<p>
-Administratorem strony internetowej <strong>tomaszkostek.pl</strong> jest
-<strong>Tomasz Kostek – Steam & Voice Experience</strong>.
-</p>
+        <section>
+          <h2>Jakie dane mogą być przetwarzane</h2>
+          <p>
+            Strona nie wymaga zakładania konta ani rejestracji. Dane osobowe mogą zostać
+            przekazane dobrowolnie, na przykład podczas kontaktu e-mailowego. W takim przypadku
+            są wykorzystywane wyłącznie w celu udzielenia odpowiedzi, prowadzenia korespondencji
+            lub ustalenia warunków współpracy.
+          </p>
+        </section>
 
-<p>
-Kontakt:
-<a href="mailto:kontakt@tomaszkostek.pl">kontakt@tomaszkostek.pl</a>
-</p>
+        <section>
+          <h2>Google Analytics</h2>
+          <p>
+            Strona korzysta z usługi Google Analytics 4, aby mierzyć ruch i lepiej rozumieć,
+            w jaki sposób odwiedzający korzystają z witryny. Narzędzie może przetwarzać m.in.
+            informacje o urządzeniu i przeglądarce, przybliżonej lokalizacji, odwiedzanych
+            podstronach oraz sposobie poruszania się po stronie.
+          </p>
+          <p>
+            Dane analityczne służą wyłącznie do oceny działania witryny i jej dalszego rozwoju.
+            Do Google Analytics nie są celowo przekazywane dane pozwalające bezpośrednio
+            zidentyfikować konkretną osobę.
+          </p>
+        </section>
 
-<h2>Dane osobowe</h2>
+        <section>
+          <h2>Pliki cookies</h2>
+          <p>
+            Witryna może wykorzystywać pliki cookies niezbędne do prawidłowego działania
+            oraz pliki cookies związane z pomiarem statystyk. Ustawienia cookies możesz
+            zmienić w swojej przeglądarce, a zapisane pliki usunąć w dowolnym momencie.
+          </p>
+        </section>
 
-<p>
-Strona nie wymaga zakładania kont użytkowników i nie zbiera danych osobowych
-poza informacjami dobrowolnie przekazanymi podczas kontaktu e-mail.
-</p>
+        <section>
+          <h2>Podstawa i okres przetwarzania</h2>
+          <p>
+            Dane przekazane w korespondencji są przetwarzane w zakresie niezbędnym do obsługi
+            zapytania, podjęcia działań przed zawarciem umowy, realizacji współpracy albo
+            ochrony uzasadnionych interesów administratora.
+          </p>
+          <p>
+            Dane są przechowywane przez czas potrzebny do realizacji celu, a następnie przez
+            okres wymagany przepisami lub niezbędny do ustalenia, dochodzenia bądź obrony roszczeń.
+          </p>
+        </section>
 
-<h2>Pliki cookies</h2>
+        <section>
+          <h2>Odbiorcy danych</h2>
+          <p>
+            W niezbędnym zakresie dane mogą być przetwarzane przez dostawców usług technicznych,
+            poczty elektronicznej, hostingu i narzędzi analitycznych, w tym Google. Podmioty te
+            działają na podstawie własnych zasad lub odpowiednich umów dotyczących przetwarzania danych.
+          </p>
+        </section>
 
-<p>
-Strona wykorzystuje podstawowe pliki cookies niezbędne do prawidłowego działania
-oraz anonimowych statystyk odwiedzin.
-</p>
+        <section>
+          <h2>Twoje prawa</h2>
+          <p>W zakresie wynikającym z obowiązujących przepisów możesz żądać:</p>
+          <ul>
+            <li>dostępu do swoich danych,</li>
+            <li>ich sprostowania lub usunięcia,</li>
+            <li>ograniczenia przetwarzania,</li>
+            <li>wniesienia sprzeciwu,</li>
+            <li>przeniesienia danych, gdy ma to zastosowanie,</li>
+            <li>wycofania udzielonej zgody, jeżeli przetwarzanie odbywa się na jej podstawie.</li>
+          </ul>
+          <p>
+            Masz również prawo złożyć skargę do właściwego organu nadzorczego zajmującego się
+            ochroną danych osobowych.
+          </p>
+        </section>
 
-<h2>Google Analytics</h2>
+        <section>
+          <h2>Linki zewnętrzne</h2>
+          <p>
+            Na stronie mogą znajdować się odnośniki do serwisów zewnętrznych, takich jak
+            Facebook, Instagram, YouTube oraz witryny partnerów. Po przejściu do takiego
+            serwisu obowiązują zasady prywatności jego właściciela.
+          </p>
+        </section>
 
-<p>
-Strona korzysta z Google Analytics w celu anonimowej analizy ruchu oraz
-doskonalenia jakości serwisu.
-</p>
+        <section>
+          <h2>Aktualizacje polityki</h2>
+          <p>
+            Polityka może być aktualizowana w razie zmian funkcjonalności witryny, używanych
+            narzędzi lub obowiązujących wymogów. Aktualna wersja jest zawsze publikowana na tej stronie.
+          </p>
+          <p><strong>Ostatnia aktualizacja: 1 sierpnia 2026 r.</strong></p>
 
-<h2>Linki do innych stron</h2>
+          <div class="btnrow">
+            <a class="btn primary" href="/">← Powrót na stronę główną</a>
+            <a class="btn" href="mailto:kontakt@tomaszkostek.pl">Napisz do mnie</a>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
 
-<p>
-Na stronie mogą znajdować się odnośniki do serwisów zewnętrznych, takich jak
-Facebook, Instagram, YouTube czy strony partnerów. Za zasady prywatności tych
-serwisów odpowiadają ich właściciele.
-</p>
-
-<h2>Kontakt</h2>
-
-<p>
-W sprawach dotyczących prywatności można skontaktować się pod adresem:
-<strong>kontakt@tomaszkostek.pl</strong>.
-</p>
-
+  <footer>
+    <div class="wrap footer">
+      <div>© 2026 Tomasz Kostek • Steam &amp; Voice Experience</div>
+      <a href="/">tomaszkostek.pl</a>
+    </div>
+  </footer>
 </body>
 </html>
